@@ -8,7 +8,7 @@ import EnrolledCard from "../components/enrolledCard";
 
 const Dashboard = () => {
 
-
+    
     
     const [menuClicked, setMenuClicked] = useState(false);
     
@@ -16,7 +16,8 @@ const Dashboard = () => {
     const { user, isAuthenticated, isLoading } = useAuth0();
     const dispatch = useDispatch();
     const enrolledDataState = useSelector((state) => state.enrolledData);
-
+    console.log(enrolledDataState
+        )
 
     const menuClick = () => {
         setMenuClicked(current => !current)
@@ -33,6 +34,9 @@ const Dashboard = () => {
         }
 
     }
+
+   
+   
 
 
     useEffect(() => {
@@ -123,6 +127,7 @@ const Dashboard = () => {
                                                 duration={i.duration}
                                                 enrollmentStatus={i.enrollmentStatus}
                                                 thumbnail={i.thumbnail}
+                                                studentsCompleted={i.studentsCompleted}
 
                                             />
 

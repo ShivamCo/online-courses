@@ -11,13 +11,13 @@ const router = express.Router()
 router.post( "/remove-enroll", async(req,res)=>{
 
     const studentInfo = req.body.data
-    console.log(studentInfo)
+    
 
     try {
         const response =  res.json(await courseModel.findOneAndUpdate(
             { courseName: studentInfo.course },
-            { $pull: { students: { email: studentInfo.email } } },
-            { new: true }
+            { $push: { studentsCompleted: studentInfo.email  } }
+            
           ))
         
     } catch (e){

@@ -12,7 +12,8 @@ const courseSchema = new mongoose.Schema({
     location: String,
     prerequisites: Array,
     syllabus: Array,
-    students: Array
+    students: Array,
+    studentsCompleted: Array
 
 
 })
